@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics-informed neural networks (PINNs) for fluid mechanics  A review.md",
+                "file": "团队协作指南 (Obsidian + Git + VS Code).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Physics-informed neural networks (PINNs) for fluid mechanics  A review"
+              "title": "团队协作指南 (Obsidian + Git + VS Code)"
             }
           }
         ]
@@ -181,8 +181,9 @@
   },
   "active": "e94156e92d823b9a",
   "lastOpenFiles": [
+    "markdown指北.md",
+    "Physics-informed neural networks (PINNs) for fluid mechanics  A review.md",
     "团队协作指南 (Obsidian + Git + VS Code).md",
-    "README.md",
-    "Physics-informed neural networks (PINNs) for fluid mechanics  A review.md"
+    "README.md"
   ]
 }
