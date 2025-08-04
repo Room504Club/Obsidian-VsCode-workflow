@@ -40,7 +40,7 @@
 1.  **访问官网**: [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
 2.  **下载并安装**: 下载最新版的安装包。
 3.  **安装过程**:
-    > [!WARNING] 安装过程中的重要选项
+     [!WARNING] 安装过程中的重要选项
     > - 当被问及为“Just Me”还是“All Users”安装时，推荐选择 **“Just Me”** (为我安装)。这样安装路径在你的用户文件夹下，后续操作不需要管理员权限，能省去很多麻烦。
     > - 当看到“Add Anaconda to my PATH environment variable”（添加到环境变量）的选项时，如果它是**可选的并且不被推荐**，可以**不勾选**。我们会使用专门的 Anaconda 终端来工作。
 
@@ -63,8 +63,8 @@
 1.  **安装 MiKTeX (印刷机本体)**
     - **访问官网**: [https://miktex.org/download](https://miktex.org/download)
     - **下载并安装**:
-    > [!IMPORTANT] 关键设置
-    > 在安装过程中，请**务必勾选“将 MiKTeX 添加到系统路径 (Add MiKTeX to the system PATH)”** 或类似的选项。这一步至关重要！
+>[!IMPORTANT] 关键设置
+在安装过程中，请**务必勾选“将 MiKTeX 添加到系统路径 (Add MiKTeX to the system PATH)”** 或类似的选项。这一步至关重要！
 
 2.  **安装 Strawberry Perl (印刷机墨水)**
     - **访问官网**: [https://strawberryperl.com/](https://strawberryperl.com/)
@@ -99,7 +99,8 @@
     ```bash
     git clone <你刚刚复制的仓库HTTPS地址>
     ```
-    例如: `git clone https://github.com/inroom504/team-research-notes.git`
+> [!TIP] 例如: 
+> `git clone https://github.com/Room504Club/Obsidian-VsCode-workflow
 
 ### 3.2 用 Obsidian 打开仓库
 - 打开 Obsidian，选择“打开另一个库” -> “打开本地文件夹作为库”，并指向你刚刚通过 `git clone` 创建的那个文件夹。
