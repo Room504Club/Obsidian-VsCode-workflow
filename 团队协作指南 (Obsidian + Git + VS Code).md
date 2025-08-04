@@ -330,7 +330,7 @@
 > 
 > 接下来，您的团队成员就可以通过 `git clone <仓库地址>` 的命令将项目下载到他们各自的电脑上，并开始协作了。
 
-## 🎓 Pandoc 终极指南：你的文档格式“瑞士军刀”
+## Part 7： Pandoc 终极指南：你的文档格式“瑞士军刀”
 
 > [!INFO] 什么是 Pandoc？为什么我需要它？
 > 想象一下，你用 Obsidian 写了一篇非常漂亮的 Markdown 笔记，但现在你需要：
@@ -664,3 +664,90 @@
 
 > [!SUCCESS] 总结
 > Pandoc 是打通“笔记”与“成品”之间壁垒的强大工具。今天我们只尝试了最常见的三种格式，它还支持导出为幻灯片（beamer）、思维导图（opml）等数十种格式，等待你去探索！
+
+
+## Part 8：👩‍💻 VS Code + Anaconda 无缝对接指南
+
+> [!INFO] 核心理念：为你的“车间”选择正确的“工具箱”
+> - **VS Code** 就像一个功能强大的“精加工车间”。
+> - **Anaconda 虚拟环境** 就像一个个专门的“工具箱”，每个工具箱里都放着特定项目所需的工具（比如 `numpy`, `pandas`, `pinns` 等库）。
+> 
+> 本指南的目标，就是教会你如何在“车间”里，为你手头的项目，选择并切换到正确的“工具箱”。
+
+> [!TIP] 准备工作
+> [cite_start]在开始之前，请确保你已经在 VS Code 中安装了由 **Microsoft** 官方发布的 `Python` 和 `Jupyter` 这两个核心插件 [cite: 5]。
+
+---
+
+### Part 1：选择正确的 Python 解释器 (为整个项目指定工具箱)
+
+这是最核心的一步。它会告诉 VS Code：“在这个项目文件夹里，我所有的 `.py` 脚本和终端都默认使用这个环境。”
+
+> [!TODO] 操作步骤：为你的项目选择正确的“工具箱”
+> 
+> ### 步骤一：在 VS Code 中打开你的项目文件夹
+> 
+> 这非常重要，它定义了你的“工作区”。
+> [cite_start]- 在 VS Code 菜单栏选择 `文件 (File)` -> `打开文件夹 (Open Folder...)` [cite: 2, 5]。
+> [cite_start]- 选择你的 Obsidian 库（Vault）或任何你的科研项目所在的根文件夹 [cite: 2, 5]。
+> 
+> ### 步骤二：打开“选择解释器”菜单
+> 
+> 你有两种快捷方式可以打开这个菜单：
+> 
+> > [!EXAMPLE]- **方法 A：使用命令面板 (推荐)**
+> [cite_start]> 1.  按下快捷键 `Ctrl + Shift + P` (Windows) 或 `Cmd + Shift + P` (Mac)，打开命令面板 [cite: 2, 5]。
+> [cite_start]> 2.  在弹出的搜索框中，输入并选择 **`Python: Select Interpreter`** [cite: 2, 5]。
+> 
+> > [!EXAMPLE]- **方法 B：使用状态栏快捷方式**
+> [cite_start]> 1.  查看 VS Code 窗口的**右下角** [cite: 2]。
+> [cite_start]> 2.  点击那个显示当前 Python 版本的按钮（例如 `Python 3.9.12`） [cite: 2]。
+> 
+> ### 步骤三：在列表中选择你的 Anaconda 环境
+> 
+> [cite_start]- 无论使用哪种方法，VS Code 都会弹出一个列表，上面列出了它在你电脑上**自动发现的所有 Python 环境** [cite: 2, 5]。
+> [cite_start]- 在这个列表中，仔细寻找你为该项目创建的 Anaconda 虚拟环境 [cite: 2, 5][cite_start]。它通常会带有 `(conda)` 标识，非常清晰，例如 [cite: 2]：
+>     ```
+>     Python 3.10.4 ('pinns-env': conda)
+>     C:\Users\luoch\anaconda3\envs\pinns-env\python.exe
+>     ```
+> [cite_start]- **单击**你想要使用的那个环境即可 [cite: 2, 5]。
+
+---
+
+### Part 2：验证三部曲：确保连接成功
+
+> [!SUCCESS] 完成选择后，你可以通过以下三个地方来确认环境是否已正确加载。
+> 
+> ### ✅ 验证点一：右下角的状态栏
+> 
+> [cite_start]- VS Code 窗口右下角的 Python 版本信息已经变成了你刚刚选择的环境名称，例如 `Python 3.10.4 ('pinns-env': conda)` [cite: 2]。这是最直观的确认。
+> 
+> ### ✅ 验证点二：Jupyter Notebook 的内核
+> 
+> [cite_start]- 打开任意一个 `.ipynb` 文件 [cite: 2, 5]。
+> [cite_start]- 查看 Notebook 编辑界面**右上角**的内核选择器 [cite: 2, 5]。
+> [cite_start]- 请确保这里显示的名字也是你的目标环境（如 `pinns-env`） [cite: 2, 5]。如果不是，可以手动点击它，在下拉列表中重新选择一次。
+> > [!NOTE] 什么是内核 (Kernel)？
+> > 内核就是实际运行你 Notebook 代码的“引擎”。你必须确保这个“引擎”就是你装了 `pinns` 库的那个环境，否则代码会因为找不到库而报错。
+> 
+> ### ✅ 验证点三：VS Code 的集成终端
+> 
+> - 按下快捷键 `` Ctrl + ` `` (数字1左边的那个键) 打开 VS Code 的集成终端。
+> [cite_start]- 你会发现，新打开的终端命令提示符前面，会自动带上 `(pinns-env)` 的字样 [cite: 2]。
+> [cite_start]- 这表明终端也已经自动进入了你指定的 Anaconda 环境 [cite: 2][cite_start]。你可以在这里运行 `conda list` 或 `pip list` 来检查库是否都存在 [cite: 2]。
+
+---
+
+### Part 3：疑难解答
+
+> [!QUESTION]- 在列表中找不到我创建的环境怎么办？
+> 
+> 这种情况偶尔会发生，尤其是当 Anaconda 安装在非标准路径下时。
+> 
+> [cite_start]1.  在“选择解释器”的列表中，第一项通常是 `Enter interpreter path...` [cite: 2]。
+> [cite_start]2.  点击它，然后选择 `Find...` [cite: 2]。
+> [cite_start]3.  会弹出一个文件浏览器，请你**手动**导航到你 Anaconda 环境的 `python.exe` 文件所在的位置 [cite: 2]。
+>     [cite_start]- 通常路径是：`C:\Users\您的用户名\anaconda3\envs\您的环境名\python.exe` [cite: 2]。
+> 4.  选中 `python.exe` 文件并确认即可。
+
